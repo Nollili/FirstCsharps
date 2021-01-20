@@ -1,0 +1,13 @@
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.deps.json
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.runtimeconfig.json
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.runtimeconfig.dev.json
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.dll
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/bin/Debug/netcoreapp3.1/HelloWorld.pdb
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.csprojAssemblyReference.cache
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.AssemblyInfoInputs.cache
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.AssemblyInfo.cs
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.csproj.CoreCompileInputs.cache
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.dll
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.pdb
+/home/noli/Asztal/Soter Projektek/HelloWorld/HelloWorld/obj/Debug/netcoreapp3.1/HelloWorld.genruntimeconfig.cache
