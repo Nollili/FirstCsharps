@@ -1,51 +1,34 @@
 ﻿using System;
 
-namespace _10
+namespace _12
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Prímszámok 2-től 1000-ig.");
 
-            int[] szamok = new int[20];
-            int[] prs = new int[szamok.Length];
-            int[] prtln = new int[szamok.Length];
-
-            Random rnd = new Random();
-            for (int i = 0; i < szamok.Length; i++)
+            int db = 0;
+            for (int sz = 2; sz <= 1000; sz++)
             {
-                szamok[i] = rnd.Next(100);
-            }
 
-            int db_prs = 0, db_prtln = 0;
-
-            for (int i = 0; i < szamok.Length; i++)
-            {
-                if (szamok[i] % 2 == 0)
+                bool prim = true;
+                for (int j = 2; j < sz; j++)
                 {
-                    prs[db_prs] = szamok[i];
-                    db_prs++;
+                    if (sz % j == 0)
+                    {
+                        prim = false;
+                    }
                 }
-                else
+
+                if (prim)
                 {
-                    prtln[db_prtln] = szamok[i];
-                    db_prtln++;
+                    Console.Write($"{sz} ");
+                    db++;
                 }
             }
-
             Console.WriteLine();
-            Console.WriteLine("Párosak: ");
-            foreach (int i in prs)
-            {
-                Console.Write("{0} ", i);
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("Páratlanok: ");
-            foreach (int k in prtln)
-            {
-                Console.Write("{0} ", k);
-            }
+            Console.WriteLine("2-től 1000-ig van {0} db prímszám", db);
         }
     }
 }
