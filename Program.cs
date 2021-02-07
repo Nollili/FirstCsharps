@@ -1,34 +1,50 @@
 ﻿using System;
 
-namespace _8
+namespace _10
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Írjon be 10 számot: ");
-            double[] szamok = new double[10];
 
-            //Sorrendben
-            for (int i = 0; i < 10; i++)
+            int[] szamok = new int[20];
+            int[] prs = new int[szamok.Length];
+            int[] prtln = new int[szamok.Length];
+
+            Random rnd = new Random();
+            for (int i = 0; i < szamok.Length; i++)
             {
-                Console.WriteLine("Szám: ");
-                szamok[i] = Convert.ToDouble(Console.ReadLine());
+                szamok[i] = rnd.Next(100);
             }
-            Console.WriteLine("A 10 szám:");
 
-            foreach (double num in szamok)
+            int db_prs = 0, db_prtln = 0;
+
+            for (int i = 0; i < szamok.Length; i++)
             {
-                Console.Write("{0} ", num);
+                if (szamok[i] % 2 == 0)
+                {
+                    prs[db_prs] = szamok[i];
+                    db_prs++;
+                }
+                else
+                {
+                    prtln[db_prtln] = szamok[i];
+                    db_prtln++;
+                }
             }
 
             Console.WriteLine();
-            //Fordított sorrendben
-            Console.WriteLine("A 10 szám visszafelé:");
-
-            for (int j = szamok.Length - 1; j >= 0; j--)
+            Console.WriteLine("Párosak: ");
+            foreach (int i in prs)
             {
-                Console.Write("{0} ", szamok[j]);
+                Console.Write("{0} ", i);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Páratlanok: ");
+            foreach (int k in prtln)
+            {
+                Console.Write("{0} ", k);
             }
         }
     }
