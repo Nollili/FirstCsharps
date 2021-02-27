@@ -1,90 +1,81 @@
 ﻿using System;
 
-namespace osztalyzat
+namespace inherit
 {
-
-    class OsztalyozOsztaly
-    {
-
-        public static int Osztályoz(int pontszam)
-        {
-            int erdemjegy = 0;
-            if (pontszam > 0 && pontszam <= 100)
-            {
-                if (pontszam >= 90)
-                {
-                    erdemjegy = 5;
-                }
-                else if (pontszam >= 70)
-                {
-                    erdemjegy = 4;
-                }
-                else if (pontszam >= 60)
-                {
-                    erdemjegy = 3;
-                }
-                else if (pontszam >= 50)
-                {
-                    erdemjegy = 2;
-                }
-                else
-                {
-                    erdemjegy = 1;
-                }
-            }
-            else
-            {
-                Console.WriteLine("Hibás adat került bevitelre!");
-            }
-            return erdemjegy;
-        }
-
-        public static void SzovegesJegy(int jegy)
-        {
-            if (jegy >= 1 && jegy <= 100)
-            {
-                switch (jegy)
-                {
-                    case 1:
-                        Console.WriteLine("Érdemjegy: elégtelen.");
-                        break;
-                    case 2:
-                        Console.WriteLine("Érdemjegy: elégséges.");
-                        break;
-                    case 3:
-                        Console.WriteLine("Érdemjegy: közepes.");
-                        break;
-                    case 4:
-                        Console.WriteLine("Érdemjegy: jó.");
-                        break;
-                    case 5:
-                        Console.WriteLine("Érdemjegy: jeles.");
-                        break;
-                }
-            }
-            else
-            {
-                Console.WriteLine("Hibás adat került bevitelre!");
-            }
-        }
-    }
-
     class Program
     {
+
+        class OsOsztaly
+        {
+            protected double x, y, eredmeny;
+            public OsOsztaly(double x1, double y1)
+            {
+                x = x1;
+                y = y1;
+            }
+
+            public void Szamol()
+            {
+                eredmeny = (x + y) / 2;     //számtani közép számolása
+            }
+
+            public void Kiiratas1()
+            {
+                Console.WriteLine("x = " + x + "; y = " + y);
+                Console.WriteLine("Szamtani kozep : " + eredmeny);
+            }
+        }
+
+        class SzarmaztatottOsztaly : OsOsztaly
+        {
+            private double osszeg;
+            public SzarmaztatottOsztaly(double x1, double y1) : base(x1, y1)
+            {
+                osszeg = 0;
+            }
+
+            public void Szamol()
+            {
+                eredmeny = Math.Sqrt(x * y);    //mértani közép számolása, az ősosztály tagváltozóit érjük el, amiket örökölt a származtatott osztály
+            }
+
+            public void Kiiratas1()
+            {
+                Console.WriteLine("x = " + x + "; y = " + y);
+                Console.WriteLine("Mertani kozep : " + eredmeny);
+            }
+
+            public void OsszegKepzes()
+            {
+                osszeg = x + y;
+            }
+
+            public void Kiiratas2()
+            {
+                Console.WriteLine("Osszeg : " + osszeg);
+            }
+        }
         static void Main(string[] args)
         {
-            int pontszam = 0, erdemjegy = 0;
-            
 
-            do
-            {
-                Console.WriteLine("A dolgozat pontszáma: ");
-                pontszam = int.Parse(Console.ReadLine());
-            } while (pontszam < 0 || pontszam > 100);
-            
-            erdemjegy = OsztalyozOsztaly.Osztályoz(pontszam);
-            OsztalyozOsztaly.SzovegesJegy(erdemjegy);
+            double xx, yy;
+            Console.WriteLine("Kerem adja meg az első adatot : ");
+            xx = double.Parse(Console.ReadLine());
+            Console.WriteLine("Kerem adja meg a masodik adatot : ");
+            yy = double.Parse(Console.ReadLine());
 
+            OsOsztaly osOszt = new OsOsztaly(xx, yy);   //ősosztály példányosítása
+            osOszt.Szamol();
+            osOszt.Kiiratas1();
+            Console.WriteLine();
+
+            SzarmaztatottOsztaly szarmOszt = new SzarmaztatottOsztaly(xx, yy);  //származtatott osztály példányosítása
+            szarmOszt.Szamol();
+            szarmOszt.Kiiratas1();
+            szarmOszt.OsszegKepzes();
+            szarmOszt.Kiiratas2();
+
+            Console.ReadKey();
 
         }
     }
