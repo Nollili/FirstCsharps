@@ -1,91 +1,91 @@
 ﻿using System;
 
-namespace szoveg
+namespace osztalyzat
 {
-    class KarakterSzamOszt
+
+    class OsztalyozOsztaly
     {
-        private String s;
-        private int karakterSzama, mhDb, szokDb, a_db, e_db, i_db, u_db, o_db;
 
-        public KarakterSzamOszt(int a_db, int e_db, int i_db, int u_db, int o_db, int mhDb, int szokDb)
+        public static int Osztályoz(int pontszam)
         {
-            this.a_db = a_db;
-            this.e_db = e_db;
-            this.i_db = i_db;
-            this.o_db = o_db;
-            this.u_db = u_db;
-            this.mhDb = mhDb;
-            this.szokDb = szokDb;
-            
-            Console.WriteLine("Az ön szövege: ");
-            s = Console.ReadLine();
-            s = s.ToLower();
-            karakterSzama = s.Length;
-
+            int erdemjegy = 0;
+            if (pontszam > 0 && pontszam <= 100)
+            {
+                if (pontszam >= 90)
+                {
+                    erdemjegy = 5;
+                }
+                else if (pontszam >= 70)
+                {
+                    erdemjegy = 4;
+                }
+                else if (pontszam >= 60)
+                {
+                    erdemjegy = 3;
+                }
+                else if (pontszam >= 50)
+                {
+                    erdemjegy = 2;
+                }
+                else
+                {
+                    erdemjegy = 1;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Hibás adat került bevitelre!");
+            }
+            return erdemjegy;
         }
 
-        public void Vizsgalat()
+        public static void SzovegesJegy(int jegy)
         {
-            for (int i = 0; i < karakterSzama; i++)
+            if (jegy >= 1 && jegy <= 100)
             {
-                switch (s[i])
+                switch (jegy)
                 {
-                    case 'a':
-                        mhDb++;
-                        a_db++;
+                    case 1:
+                        Console.WriteLine("Érdemjegy: elégtelen.");
                         break;
-                    case 'e':
-                        mhDb++;
-                        e_db++;
+                    case 2:
+                        Console.WriteLine("Érdemjegy: elégséges.");
                         break;
-                    case 'i':
-                        mhDb++;
-                        i_db++;
+                    case 3:
+                        Console.WriteLine("Érdemjegy: közepes.");
                         break;
-                    case 'o':
-                        mhDb++;
-                        o_db++;
+                    case 4:
+                        Console.WriteLine("Érdemjegy: jó.");
                         break;
-                    case 'u':
-                        mhDb++;
-                        u_db++;
+                    case 5:
+                        Console.WriteLine("Érdemjegy: jeles.");
                         break;
-                    case ' ':
-                        szokDb++;
-                        break;
-
                 }
-
-
+            }
+            else
+            {
+                Console.WriteLine("Hibás adat került bevitelre!");
             }
         }
-
-        public void EredmenyKiir()
-        {
-            Console.WriteLine("A megadott szöveg: ");
-            Console.WriteLine(s);
-            Console.WriteLine("Karakterek száma: " + karakterSzama);
-            Console.WriteLine("Magánkangzók száma: " + mhDb);
-
-            Console.WriteLine("\t\t 'a' karakterek száma: " + a_db);
-            Console.WriteLine("\t\t 'e' karakterek száma: " + e_db);
-            Console.WriteLine("\t\t 'i' karakterek száma: " + i_db);
-            Console.WriteLine("\t\t 'o' karakterek száma: " + o_db);
-            Console.WriteLine("\t\t 'u' karakterek száma: " + u_db);
-
-            Console.WriteLine("Szóközök száma: " + szokDb);
-        }
-
     }
-
 
     class Program
     {
         static void Main(string[] args)
         {
-            KarakterSzamOszt karSzamOszt = new KarakterSzamOszt(0, 0, 0, 0, 0, 0, 0);
-            karSzamOszt.Vizsgalat();
-            karSzamOszt.EredmenyKiir();
+            int pontszam = 0, erdemjegy = 0;
+            
+
+            do
+            {
+                Console.WriteLine("A dolgozat pontszáma: ");
+                pontszam = int.Parse(Console.ReadLine());
+            } while (pontszam < 0 || pontszam > 100);
+            
+            erdemjegy = OsztalyozOsztaly.Osztályoz(pontszam);
+            OsztalyozOsztaly.SzovegesJegy(erdemjegy);
+
+
         }
     }
 }
