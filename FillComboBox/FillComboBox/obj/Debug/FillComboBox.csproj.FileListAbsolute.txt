@@ -1,0 +1,10 @@
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\bin\Debug\FillComboBox.exe.config
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\bin\Debug\FillComboBox.exe
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\bin\Debug\FillComboBox.pdb
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\obj\Debug\FillComboBox.csprojAssemblyReference.cache
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\obj\Debug\FillComboBox.Form1.resources
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\obj\Debug\FillComboBox.Properties.Resources.resources
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\obj\Debug\FillComboBox.csproj.GenerateResource.cache
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\obj\Debug\FillComboBox.csproj.CoreCompileInputs.cache
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\obj\Debug\FillComboBox.exe
+C:\Users\noemi\source\repos\FillComboBox\FillComboBox\obj\Debug\FillComboBox.pdb
